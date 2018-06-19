@@ -1,20 +1,31 @@
 'use strict';
 
-describe('Directive: wistia', function () {
+describe('Component: wistia upload', function () {
 
   // load the directive's module
   beforeEach(module('wistiaUploadDemo'));
 
   var element,
-    scope;
+    scope,
+    $compile;
 
-  beforeEach(inject(function ($rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _$compile_) {
     scope = $rootScope.$new();
+    $compile = _$compile_;
+    WistiaUploadControler = $controller('wistiaUploadControler', {
+      $scope: scope
+      // place here mocked dependencies
+    });
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<wistia></wistia>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the wistia directive');
+  it('should accept project and password', inject(function () {
+    var project = 'foo';
+    var password = 'bar';
+    scope['project'] = project;
+    scope['password'] = password;
+
+    expect(scope.project).toBe('foo');
+    expect(scope.password).toBe('bar');
   }));
+
 });

@@ -17,7 +17,9 @@ describe('Controller: WistiaCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(WistiaCtrl.awesomeThings.length).toBe(3);
+  it('should attach project and a kye s to the scope', function () {
+    // console.log('Wistia Scope: ', scope.access);
+    expect(scope.access.project).toBe('cz2bhyafmq');
+    expect(scope.access.password).toBe('f64579d76f40ab92f5601e2319704aa57876cba89876b9209cd5ba57fd0822f3');
   });
 });

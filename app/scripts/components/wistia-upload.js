@@ -1,23 +1,19 @@
 'use strict';
 
-function WistiaUploadControler($scope, $compile, $element, $timeout) {
+function WistiaUploadControler($scope, $timeout) {
   // Base URL for video embed (iFrame)
   var VIDEO_BASE_URL = '//fast.wistia.net/embed/iframe/';
-  var vm = this
+  var vm = this;
 
   vm.$onInit = function(){
     $scope.access = {
       project: vm.project,
       password: vm.password
     };
-  }
+  };
 
   // Prepare jQuery
   $.noConflict();
-
-  console.log($element);
-
-  $compile($element.contents())($scope);
 
   // console.log(model.password);
 
@@ -30,7 +26,7 @@ function WistiaUploadControler($scope, $compile, $element, $timeout) {
   // - //fast.wistia.net/embed/iframe/avk9twrrbn
   // - //fast.wistia.net/embed/iframe/g5pnf59ala
   $scope.video = {
-    id: 'kro7mgsfsj', //'g5pnf59ala'
+    id: '', //'kro7mgsfsj'
     url: ''
   };
 
@@ -91,13 +87,14 @@ function WistiaUploadControler($scope, $compile, $element, $timeout) {
  * # wistia
  */
 angular.module('wistiaUploadDemo')
+.controller('wistiaUploadControler', WistiaUploadControler)
   .component('wistiaUpload', {
     templateUrl: 'scripts/components/wistia-upload.html',
     bindings: {
       project: '<',
       password: '<'
     },
-    controller: WistiaUploadControler
+    controller: 'wistiaUploadControler'
   })
   .filter('trusturl', ['$sce', function ($sce) {
     return function(url) {

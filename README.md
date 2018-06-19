@@ -31,3 +31,4 @@ npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-cor
 - [Components generator](https://github.com/Dictanova/generator-angular-components)
 - [Directive Example](https://github.com/waldirpereira/jQuery-File-Upload-Wistia-AngularJS-Directive)
 - [Pick a File snippet](https://stackoverflow.com/questions/16631702/file-pick-with-angular-js)
+- [Testing angular components — you don’t know what you’re missing](https://medium.com/@carmelc_20450/testing-angular-components-you-dont-know-what-you-re-missing-149a1cae6668)
