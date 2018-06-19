@@ -89,7 +89,7 @@ function WistiaUploadControler($scope, $timeout) {
 angular.module('wistiaUploadDemo')
 .controller('wistiaUploadControler', WistiaUploadControler)
   .component('wistiaUpload', {
-    templateUrl: 'scripts/components/wistia-upload.html',
+    templateUrl: 'views/wistia-upload.html',
     bindings: {
       project: '<',
       password: '<'
